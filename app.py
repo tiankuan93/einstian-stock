@@ -28,10 +28,8 @@ def load_data():
 
 
 df = load_data()
-print(df.to_string)
 
 sector = df.groupby('GICS Sector')
-print(sector)
 
 # Sidebar - Sector selection
 sorted_sector_unique = sorted( df['GICS Sector'].unique() )
@@ -57,8 +55,6 @@ def filedownload(df):
 st.markdown(filedownload(df_selected_sector), unsafe_allow_html=True)
 
 # https://pypi.org/project/yfinance/
-
-print(list(df_selected_sector[:10].Symbol))
 
 
 data = yf.download(
